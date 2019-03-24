@@ -47,9 +47,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="BaseInput.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventInput.cs" />
+    <Compile Include="StandardXmlParser.cs" />
+    <Compile Include="StandardXmlParserShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
