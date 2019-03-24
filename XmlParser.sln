@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlParser.Tests", "XmlParser.Tests\XmlParser.Tests.csproj", "{75EED7B5-E98E-446E-A0E8-701AF20AB250}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9B6B5EA6-4120-4B62-9D62-27EE4266ED85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3CA722A9-70F9-48D3-809B-4ACE35E97110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlParser", "src\XmlParser\XmlParser.csproj", "{0544A580-862A-4F7D-AE65-C4018E3616BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlParser.Tests1", "tests\XmlParser.Tests1\XmlParser.Tests1.csproj", "{2007AE92-3672-406C-A142-3101B4EB6F92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +17,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{75EED7B5-E98E-446E-A0E8-701AF20AB250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75EED7B5-E98E-446E-A0E8-701AF20AB250}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75EED7B5-E98E-446E-A0E8-701AF20AB250}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75EED7B5-E98E-446E-A0E8-701AF20AB250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0544A580-862A-4F7D-AE65-C4018E3616BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0544A580-862A-4F7D-AE65-C4018E3616BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0544A580-862A-4F7D-AE65-C4018E3616BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0544A580-862A-4F7D-AE65-C4018E3616BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2007AE92-3672-406C-A142-3101B4EB6F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2007AE92-3672-406C-A142-3101B4EB6F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2007AE92-3672-406C-A142-3101B4EB6F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2007AE92-3672-406C-A142-3101B4EB6F92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0544A580-862A-4F7D-AE65-C4018E3616BB} = {3CA722A9-70F9-48D3-809B-4ACE35E97110}
+		{2007AE92-3672-406C-A142-3101B4EB6F92} = {9B6B5EA6-4120-4B62-9D62-27EE4266ED85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED4EFFF0-E93E-41DD-9D73-F69BE7F701FB}

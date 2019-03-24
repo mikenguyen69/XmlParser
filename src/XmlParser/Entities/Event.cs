@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace XmlParser.Tests
+namespace XmlParser.Entities
 {
     public class Event
     {

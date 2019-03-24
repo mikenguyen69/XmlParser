@@ -1,10 +1,11 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Xml.Serialization;
+using XmlParser.Entities;
+using XmlParser.Interfaces;
 
-namespace XmlParser.Tests
+namespace XmlParser.Services
 {
-    public class StandardXmlParser<T> where T : BaseInput
+    public class StandardXmlParser<T> : IParser<T> where T : BaseXml
     {
         private readonly XmlSerializer serializer;
 
@@ -12,8 +13,8 @@ namespace XmlParser.Tests
         {
             serializer = new XmlSerializer(typeof(T));
         }
-
-        public T Parse(string xml)
+        
+        public T Parse(string xml) 
         {
             return (T)serializer.Deserialize(new StringReader(xml));
         }
