@@ -1,20 +1,18 @@
-﻿using System;
-using System.IO;
-using System.Xml.Serialization;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using XmlParser.Entities;
+using XmlParser.Services;
+using XmlParser.Tests.Services.Abstract;
 
 namespace XmlParser.Tests
 {
     [TestClass]
-    public class StandardXmlParserShould
+    public class StandardXmlParserShould : BaseTestSetup
     {
-        private readonly StandardXmlParser<EventInput> parser;
         private readonly string xml;
 
         public StandardXmlParserShould()
         {
-            parser = new StandardXmlParser<EventInput>();
             xml = @"  
                 <EventInput> 
                     <GroupId>12345</GroupId>
@@ -32,24 +30,22 @@ namespace XmlParser.Tests
         [TestMethod]
         public void UseSerializerToParseXml_Root()
         {
-            var input = parser.Parse(xml);
+            var input = _parser.Parse(xml);
 
             Assert.AreEqual(12345, input.GroupId);
             Assert.AreEqual("ABC", input.GroupName);
             Assert.AreEqual(5, input.Events.Length);
-
-            
         }
 
         [DataRow(100, "Start")]
-        [DataRow(101,"Add")]
-        [DataRow(102,"Change")]
-        [DataRow(103,"Alert")]
-        [DataRow(104,"End")]
+        [DataRow(101, "Add")]
+        [DataRow(102, "Change")]
+        [DataRow(103, "Alert")]
+        [DataRow(104, "End")]
         [DataTestMethod]
         public void UseSerializerToParseXml_Events(int eventId, string expectedName)
         {
-            var input = parser.Parse(xml);
+            var input = _parser.Parse(xml);
 
             Event e = input.Events.FirstOrDefault(x => x.Id == eventId);
             Assert.IsNotNull(e);
