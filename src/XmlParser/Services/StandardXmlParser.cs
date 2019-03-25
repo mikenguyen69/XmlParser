@@ -30,7 +30,7 @@ namespace XmlParser.Services
             Type type = typeof(EventInput);
             PropertyInfo[] props = type.GetProperties();
 
-            string[] taglist = props.Where(x => x.PropertyType != typeof(Array)).Select(x => x.Name).ToArray();
+            string[] taglist = props.Select(x => x.Name).ToArray();
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(string.Format("<{0}>", type.Name));
@@ -50,6 +50,7 @@ namespace XmlParser.Services
             return Parse(sb.ToString());
         }
 
+        #region Helpers
         private string GetMatchXmlNode(string text, string tag)
         {
             string result = "";
@@ -61,9 +62,13 @@ namespace XmlParser.Services
             if (match.Success)
             {
                 result = match.Groups[0].Value;
+
+                // replace the tag to be title case that match the property name
+                result = Regex.Replace(result, tag, tag, RegexOptions.IgnoreCase);
             }
 
             return result;
         }
+        #endregion
     }
 }

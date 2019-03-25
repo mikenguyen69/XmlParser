@@ -10,7 +10,7 @@ namespace XmlParser.Tests.Services
 
         public NonStandardXmlParserShould()
         {
-            validXml = @"this is special text it has <GroupId>12345</GroupId> and a <GroupName>ABC</GroupName>.
+            validXml = @"this is special text it has <groupId>12345</groupId> and a <groupName>ABC</groupName>.
 It also has list of following events ....";
         }
 

@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using XmlParser.Entities;
-using XmlParser.Services;
 using XmlParser.Tests.Services.Abstract;
 
 namespace XmlParser.Tests
