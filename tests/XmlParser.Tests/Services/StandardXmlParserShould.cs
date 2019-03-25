@@ -17,6 +17,7 @@ namespace XmlParser.Tests
                 <EventInput> 
                     <GroupId>12345</GroupId>
                     <GroupName>ABC</GroupName>    
+                    <Category>Cat</Category>
                     <Events> 
                         <Event Id=""100""><Name>Start</Name></Event> 
                         <Event Id=""101""><Name>Add</Name></Event> 
@@ -50,6 +51,26 @@ namespace XmlParser.Tests
             Event e = input.Events.FirstOrDefault(x => x.Id == eventId);
             Assert.IsNotNull(e);
             Assert.AreEqual(expectedName, e.Name);
+        }
+
+        [ExpectedException(typeof(System.InvalidOperationException))]
+        [TestMethod]
+        public void ThrowInvalidInputExeptionForInvalidDataType()
+        {
+            string invalidXml = @"<EventInput> 
+                    <GroupId>134abc</GroupId>
+                    <GroupName>ABC</GroupName>    
+                    <Category>Cat</Category>
+                    <Events> 
+                        <Event Id=""100""><Name>Start</Name></Event> 
+                        <Event Id=""101""><Name>Add</Name></Event> 
+                        <Event Id=""102""><Name>Change</Name></Event> 
+                        <Event Id=""103""><Name>Alert</Name></Event> 
+                        <Event Id=""104""><Name>End</Name></Event> 
+                        </Events> 
+                </EventInput>";
+
+            var input = _parser.Parse(invalidXml);
         }
     }
 }
