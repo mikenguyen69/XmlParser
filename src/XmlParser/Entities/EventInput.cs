@@ -3,7 +3,7 @@
 namespace XmlParser.Entities
 {
     [XmlRoot()]
-    public class EventInput : BaseXml
+    public class EventInput : BaseEntity
     {
         public EventInput()
         {

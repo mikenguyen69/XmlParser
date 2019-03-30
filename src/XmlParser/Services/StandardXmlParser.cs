@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace XmlParser.Services
 {
-    public class StandardXmlParser<T> : IParser<T> where T : BaseXml
+    public class StandardXmlParser<T> : IParser<T> where T : BaseEntity
     {
         private readonly XmlSerializer serializer;
 

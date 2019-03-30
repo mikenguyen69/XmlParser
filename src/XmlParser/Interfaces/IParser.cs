@@ -2,7 +2,7 @@
 
 namespace XmlParser.Interfaces
 {
-    public interface IParser<T> where T : BaseXml
+    public interface IParser<T> where T : BaseEntity
     {
         T Parse(string xml);
         T ParseText(string text);
